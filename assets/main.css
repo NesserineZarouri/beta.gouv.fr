@@ -511,3 +511,22 @@ img.lozad {
 .fast-cta {
   background: var(--artwork-decorative-blue-france);
 }
+
+.fr-tile.tile-no-border {
+  box-shadow: unset;
+}
+
+#incubateurs .hero-section img {
+    max-height: 180px;
+    object-fit: contain;
+}
+
+#incubateurs ul.checkmark-list li {
+    list-style-image: url(/assets/images/icons/checkmark.svg);
+}
+
+@media screen and (min-width: 768px) {
+    #incubateurs ul.checkmark-list {
+        columns: 2;
+    }
+}

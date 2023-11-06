@@ -5,21 +5,129 @@ layout: default
 {% assign lang = page.lang | default: site.lang | default: "en" %}
 {%- assign incubators = site.incubators -%}
 
-<section class="section-blue section-main">
-    <div class="fr-container fr-my-6w">
-        <h1>Notre réseau d'incubateurs</h1>
-    </div>
-</section>
-
-<section class="fr-py-2w fr-pt-4w" id="incubateur">
-    <div class="fr-container">
-        {%- for incubator in site.incubators -%}
-            <div id="{{ incubator.id }}">
-                {%- include card-incubator.html incubator=incubator -%}
-                {% unless forloop.last %}
-                <hr class="beta-communaute-hr">
-                {% endunless %}
+<div id="incubateurs">
+    <section class="hero-section">
+        <div class="fr-container fr-py-5w">
+        <div class="fr-grid-row">
+            <div class="fr-col-md-8">
+            <h1 class="fr-mb-3w">Construisez les services de demain</h1>
+            <p class="fr-text--lead fr-pr-3w">
+                Nous accompagnons votre administration à créer son propre incubateur de services numériques publics.
+            </p>
             </div>
-        {%- endfor -%}
-    </div>
-</section>
+            <div class="fr-col-md-4">
+            <img class="fr-responsive-img" alt="" src="/assets/images/incubators-hero.png" />
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="fr-container fr-py-2w">
+            <div class="fr-grid-row fr-grid-row--gutters">
+                <div class="fr-col-12 fr-col-sm-4">
+                    {% include card-incubator-goal.html
+                        title="Outiller vos équipes"
+                        description="Nous favorisons l’environnement des équipes pour atteindre l’impact rapidement."
+                        icon="/assets/images/icons/incubateurs/coding.svg"
+                    %}
+                </div>
+                <div class="fr-col-12 fr-col-sm-4">
+                    {% include card-incubator-goal.html
+                        title="Prendre soin de la communauté"
+                        description="Nous oeuvrons pour le bien être des membres de la communauté."
+                        icon="/assets/images/icons/incubateurs/community.svg"
+                    %}
+                </div>
+                <div class="fr-col-12 fr-col-sm-4">
+                    {% include card-incubator-goal.html
+                        title="Favoriser votre passage à l’échelle"
+                        description="Nous accompagnons les services prêts à être déployés nationalement."
+                        icon="/assets/images/icons/incubateurs/money.svg"
+                    %}
+                </div>
+            </div>
+            <div class="fr-grid-row">
+                <div class="fr-col">
+                    <h2 class="fr-mt-1w">Le label beta.gouv</h2>
+                </div>
+            </div>
+            <div class="fr-grid-row">
+                <div class="fr-col">
+                    <h3 class="fr-h5 fr-mt-1">Une méthode éprouvée</h3>
+                </div>
+            </div>
+            <div class="fr-grid-row">
+                <div class="fr-col">
+                    <ul class="checkmark-list">
+                        <li>
+                            18 incubateurs depuis 2014
+                            <div class="fr-text--sm">Depuis la création du premier incubateur, nous avons accompagné X ministères à mettre en place leur propre incubateur.</div>
+                        </li>
+                        <li>
+                            Plus de 200 services en cours d’incubation
+                            <div class="fr-text--sm">Nous accompagnons les Startups d’État, de la phase d’investigation jusqu’à leur pérennisation.</div>
+                        </li>
+                    </ul>
+                    <h3 class="fr-h5 fr-mt-1">Des standards de qualité</h3>
+                    <p>Nous accompagnons les équipes à concevoir des services de qualité :</p>
+                    <ul class="checkmark-list">
+                        <li>Usabilité par une conception proche des utilisateurices</li>
+                        <li>Accessibilité et conception pour tous</li>
+                        <li>Protection des données personnelles</li>
+                        <li>Écoconception et frugalité</li>
+                        <li>Transparence via le code source et des statistiques ouverts</li>
+                        <li>Sécurité agile</li>
+                        <li>Qualité logicielle via code déployé et testé en continu</li>
+                        <li>Qualité du support</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            ---
+
+            Vous souhaitez lancer un service numérique dans votre administration ?
+            1.
+            Lançons ensemble votre premier produit
+            2.
+            Structurons votre incubateur
+            3.
+            Rejoignez le réseau beta.gouv.fr
+            Contactez-nous
+
+
+            Nos réussites
+            beta.gouv.fr fédère des incubateurs, dans de nombreux ministères. Chacun de ces incubateurs adhère au manifeste, et promeut le programme dans son administration.
+        </div>
+    </section>
+
+
+    <section class="fr-py-2w fr-pt-4w">
+        <div class="fr-container">
+            {%- for incubator in site.incubators -%}
+                <div id="{{ incubator.id }}">
+                    {%- include card-incubator.html incubator=incubator -%}
+                    {% unless forloop.last %}
+                    <hr class="beta-communaute-hr">
+                    {% endunless %}
+                </div>
+            {%- endfor -%}
+        </div>
+    </section>
+</div>

@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+{% assign lang = page.lang | default: site.lang | default: "fr" %}
+{% assign incubator_id = page.id | remove: '/incubateurs/' %}
+
+<div class="fr-container-fluid">
+  <div class="fr-container">
+    <div class="fr-py-2w fr-grid-row fr-grid-row--center fr-grid-row--gutters">
+      <div class="fr-col-md-8">
+        Coucou 22222222
+      </div>
+      <div class="fr-col-md-8">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</div>
