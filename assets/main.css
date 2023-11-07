@@ -521,12 +521,23 @@ img.lozad {
     object-fit: contain;
 }
 
-#incubateurs ul.checkmark-list li {
-    list-style-image: url(/assets/images/icons/checkmark.svg);
+#incubateurs ul.checkmark-list {
+    list-style-image: url(/assets/images/icons/list-checkmark.svg);
+    padding-inline-start: 2rem;
+}
+
+#incubateurs .incubator-onboarding {
+    border-radius: 0rem 0rem 6rem 0rem;
 }
 
 @media screen and (min-width: 768px) {
     #incubateurs ul.checkmark-list {
         columns: 2;
     }
+}
+
+.fr-card img.incubator-logo {
+    height: 150px;
+    object-fit: contain;
+    background-color: transparent;
 }

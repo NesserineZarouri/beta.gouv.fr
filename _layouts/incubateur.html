@@ -4,16 +4,89 @@ layout: default
 
 {% assign lang = page.lang | default: site.lang | default: "fr" %}
 {% assign incubator_id = page.id | remove: '/incubateurs/' %}
+<!-- {% assign incubator = site.incubators | where:'id', incubator_id | first %} -->
+<!-- {% assign owner = site.organisations | where: 'id', incubator.owner | first %} -->
 
 <div class="fr-container-fluid">
-  <div class="fr-container">
-    <div class="fr-py-2w fr-grid-row fr-grid-row--center fr-grid-row--gutters">
-      <div class="fr-col-md-8">
-        Coucou 22222222
-      </div>
-      <div class="fr-col-md-8">
-        {{ content }}
-      </div>
+    <div class="fr-container">
+        <div class="fr-grid-row fr-grid-row--center fr-grid-row--gutters fr-py-2w">
+            <!-- <pre>
+                site: {{ site | jsonify | escape }}
+                content: {{ content | jsonify | escape }}
+            </pre> -->
+
+            <div class="fr-col">
+                <h1>ccc{{ incubator_id }}</h1>
+                <h1>aaa{{ incubator.title }}</h1>
+                <h1>aaa{{ incubateur.title }}</h1>
+                <h1>bbbb{{ owner }}</h1>
+                <h1>{{ incubator.title }}</h1>
+                <p class="fr-text--xs">{{ incubator.address }}</p>
+                <p class="fr-text--xs">{{ owner.name }}</p>
+            </div>
+        </div>
+        <div class="fr-grid-row">
+            <div class="fr-col-md-4">
+                <img
+                    src="{{ site.empty_placeholder }}"
+                    data-src="../img/incubators/{{ incubator.logo }}"
+                    alt=""
+                    class="fr-responsive-img lozad"
+                />
+            </div>
+            <div class="fr-col-md-8">
+                <p>{{ incubator.content }}</p>
+                <div class="fr-btns-group fr-btns-group--inline">
+                    <a class="fr-btn fr-btn--md" href="mailto:contact@beta.gouv.fr">Nous contacter</a>
+                    <a class="fr-btn fr-btn--md" href="{{ incubator.url }}">Voir notre site</a>
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+
+        L’incubateur en quelques chiffres
+        5  investigations
+        6 services en construction
+        2 services nationaux
+        En phase d’investigation, l’équipe identifie et qualifie le problème à résoudre.
+        En phase de construction, l’équipe réalise un service numérique grâce à des apprentissages terrains.
+        En phase d’accélération, les services sont déployés dans toute la France. pour un impact maximal.
+        Les produits phares
+        Pérénisé
+        Pérénisé
+        En construction
+        DGLAN / DGEB
+        DIHAL
+        DGLAN / DGEB
+        Camino
+        Résorption Bidonvilles
+        Camino
+        Ouvrir les données du domaine minier pour partager l’information sur les projets et faciliter leur gestion.
+        Connaître, partager et agir pour résorber les bidonvilles
+        Ouvrir les données du domaine minier pour partager l’information sur les projets et faciliter leur gestion.
+        Voir tous les services de l’incubateur
+        Contacter l’incubateur
+        Benjamin Doberset
+        Magali Marcel
+        Samuel Goldszmidt
+        Tristan Robert
+        Chargé de deploiement / Chargé de produit / Coach
+        Responsable de portefeuille DGALN
+        Gentil organisateur
+        Tech lead de la fabrique numérique du MTE-MCT
+        Contacter l’équipe d’animation
     </div>
-  </div>
+</div>
+<div class="fr-container-fluid">
+    <div class="fr-container">
+        Coucou
+    </div>
 </div>

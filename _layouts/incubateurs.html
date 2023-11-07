@@ -3,20 +3,21 @@ layout: default
 ---
 
 {% assign lang = page.lang | default: site.lang | default: "en" %}
-{%- assign incubators = site.incubators -%}
+{% comment %} TODO: find a way to sort incubators based on success startups count {% endcomment %}
+{%- assign sortedIncubators = site.incubators -%}
 
 <div id="incubateurs">
     <section class="hero-section">
         <div class="fr-container fr-py-5w">
         <div class="fr-grid-row">
             <div class="fr-col-md-8">
-            <h1 class="fr-mb-3w">Construisez les services de demain</h1>
-            <p class="fr-text--lead fr-pr-3w">
-                Nous accompagnons votre administration à créer son propre incubateur de services numériques publics.
-            </p>
+                <h1 class="fr-mb-3w">Construisez les services de demain</h1>
+                <p class="fr-text--lead fr-pr-3w">
+                    Nous accompagnons votre administration à créer son propre incubateur de services numériques publics.
+                </p>
             </div>
             <div class="fr-col-md-4">
-            <img class="fr-responsive-img" alt="" src="/assets/images/incubators-hero.png" />
+                <img class="fr-responsive-img" alt="" src="/assets/images/incubators-hero.png" />
             </div>
         </div>
         </div>
@@ -61,73 +62,66 @@ layout: default
                 <div class="fr-col">
                     <ul class="checkmark-list">
                         <li>
-                            18 incubateurs depuis 2014
+                            <span class="fr-text--bold">18 incubateurs depuis 2014</span>
                             <div class="fr-text--sm">Depuis la création du premier incubateur, nous avons accompagné X ministères à mettre en place leur propre incubateur.</div>
                         </li>
                         <li>
-                            Plus de 200 services en cours d’incubation
+                            <span class="fr-text--bold">Plus de 200 services en cours d’incubation</span>
                             <div class="fr-text--sm">Nous accompagnons les Startups d’État, de la phase d’investigation jusqu’à leur pérennisation.</div>
                         </li>
                     </ul>
                     <h3 class="fr-h5 fr-mt-1">Des standards de qualité</h3>
                     <p>Nous accompagnons les équipes à concevoir des services de qualité :</p>
                     <ul class="checkmark-list">
-                        <li>Usabilité par une conception proche des utilisateurices</li>
-                        <li>Accessibilité et conception pour tous</li>
-                        <li>Protection des données personnelles</li>
-                        <li>Écoconception et frugalité</li>
-                        <li>Transparence via le code source et des statistiques ouverts</li>
-                        <li>Sécurité agile</li>
-                        <li>Qualité logicielle via code déployé et testé en continu</li>
-                        <li>Qualité du support</li>
+                        <li><span class="fr-text--bold">Usabilité</span> par une conception proche des utilisateurices</li>
+                        <li><span class="fr-text--bold">Accessibilité</span> et conception pour tous</li>
+                        <li><span class="fr-text--bold">Protection des données personnelles</span></li>
+                        <li><span class="fr-text--bold">Écoconception</span> et frugalité</li>
+                        <li><span class="fr-text--bold">Transparence</span> via le code source et des statistiques ouverts</li>
+                        <li><span class="fr-text--bold">Sécurité</span> agile</li>
+                        <li><span class="fr-text--bold">Qualité logicielle</span> via code déployé et testé en continu</li>
+                        <li><span class="fr-text--bold">Qualité du support</span></li>
                     </ul>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            ---
-
-            Vous souhaitez lancer un service numérique dans votre administration ?
-            1.
-            Lançons ensemble votre premier produit
-            2.
-            Structurons votre incubateur
-            3.
-            Rejoignez le réseau beta.gouv.fr
-            Contactez-nous
-
-
-            Nos réussites
-            beta.gouv.fr fédère des incubateurs, dans de nombreux ministères. Chacun de ces incubateurs adhère au manifeste, et promeut le programme dans son administration.
+            <div class="fr-grid-row fr-my-4w">
+                <div class="fr-col">
+                    <div class="fr-container fr-p-6w section-grey incubator-onboarding">
+                        <div class="fr-grid-row">
+                            <div class="fr-col-md-9">
+                                <h2 style="color: var(--text-title-blue-france);">Vous souhaitez lancer un service numérique dans votre administration ?</h2>
+                                <ol>
+                                    <li>Lançons ensemble <span class="fr-text--bold">votre premier produit</span></li>
+                                    <li>Structurons <span class="fr-text--bold">votre incubateur</span></li>
+                                    <li>Rejoignez le <span class="fr-text--bold">réseau beta.gouv.fr</span></li>
+                                </ol>
+                                <a class="fr-btn fr-btn--md fr-mt-3w" href="mailto:contact@beta.gouv.fr">Contactez-nous</a>
+                            </div>
+                            <div class="fr-col-md-3">
+                                <img class="fr-responsive-img" alt="" src="/assets/images/icons/incubateurs//human-cooperation.svg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fr-grid-row">
+                <div class="fr-col">
+                    <h2 class="fr-mt-1w">Nos réussites</h2>
+                    <p><span class="fr-text--bold">beta.gouv.fr fédère des incubateurs,</span> dans de nombreux ministères. Chacun de ces incubateurs adhère au manifeste, et promeut le programme dans son administration.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-
-    <section class="fr-py-2w fr-pt-4w">
+    <section class="fr-pb-2w">
         <div class="fr-container">
-            {%- for incubator in site.incubators -%}
-                <div id="{{ incubator.id }}">
-                    {%- include card-incubator.html incubator=incubator -%}
-                    {% unless forloop.last %}
-                    <hr class="beta-communaute-hr">
-                    {% endunless %}
-                </div>
-            {%- endfor -%}
+            <div class="fr-grid-row fr-grid-row--gutters">
+                {%- for incubator in sortedIncubators -%}
+                    <div class="fr-col-12 fr-col-md-4 fr-mb-2w">
+                        {%- include card-incubator.html incubator=incubator -%}
+                    </div>
+                {%- endfor -%}
+            </div>
         </div>
     </section>
 </div>
