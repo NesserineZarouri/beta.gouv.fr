@@ -1,7 +1,7 @@
 ---
 fullname: Nesserine ZAROURI
 role: Product owner
-domaine: Déploiement
+domaine: Produit 
 github: NesserineZarouri
 missions:
   - start: 2022-04-12
